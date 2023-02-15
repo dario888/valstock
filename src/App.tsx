@@ -1,25 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, Suspense, lazy } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { Navbar } from "./components";
+import { PrivateRoutes } from "./Navigation";
+import { PublicRoutes } from "./Navigation/PublicRoutes";
+import "./App.css";
+import { AlbumProvider } from "./features/Album";
 
+const HomePage = lazy(() => import("./pages/Home/HomePage"));
+const AlbumPage = lazy(() => import("./pages/Album/AlbumPage"));
+const DetailPage = lazy(() => import("./pages/Detail/DetailPage"));
+
+const LoginPage = lazy(() => import("./pages/Login/LoginPage"));
+const NotFoundPage = lazy(() => import("./pages/NotFound/NotFound"));
+
+const queryClient = new QueryClient();
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <AlbumProvider>
+          <Suspense>
+            <Routes>
+              <Route element={<PrivateRoutes />}>
+                <Route element={<HomePage />} path="/home" />
+                <Route element={<AlbumPage />} path="/album" />
+                <Route element={<DetailPage />} path="/detail" />
+              </Route>
+              <Route element={<PublicRoutes />}>
+                <Route element={<LoginPage />} path="/" />
+              </Route>
+              <Route element={<NotFoundPage />} path="*" />
+            </Routes>
+          </Suspense>
+          <Navbar />
+        </AlbumProvider>
+      </BrowserRouter>
+    </QueryClientProvider>
   );
 }
 

@@ -1,0 +1,12 @@
+.cardImg{
+    position: relative;
+    z-index: 0;
+}
+.wrapperBtn{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    padding: 6px 0;
+    z-index: 100;
+}
