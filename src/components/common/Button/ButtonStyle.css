@@ -35,13 +35,26 @@
     color: white;
 }
 
-
-
-
 .noBorderBtn {
     background-color: transparent;
     border: none;
     outline: none;
     width: auto;
     font-weight: bold;
+}
+
+@media (max-width: 700px){
+    .blackSmBtn{
+        width: 130px;
+        font-size: 14px;
+    }
+    .whiteSmBtn{
+        width: 130px;
+        font-size: 14px;
+    }
+
+    .whiteXlBtn{
+        width: 130px;
+        font-size: 14px;
+    }
 }

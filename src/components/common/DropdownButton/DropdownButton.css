@@ -1,9 +1,7 @@
-.dropdown {
-  position: relative;
-}
+  .dropdown {
+    position: relative;
+  }
 
-
- 
   .dropdownContent {
     position: absolute;
     top: 50px;
@@ -52,7 +50,7 @@
   @media(max-width: 900px){
     .myAlbumBtn {
       height: 25px;
-      width: 115px;
+      width: 100px;
       font-size: 12px;
     }
   }

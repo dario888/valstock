@@ -1,9 +1,9 @@
-import React, { useEffect, Suspense, lazy } from "react";
+import { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { Navbar } from "./components";
-import { PrivateRoutes } from "./Navigation";
-import { PublicRoutes } from "./Navigation/PublicRoutes";
+import { PrivateRoutes } from "./navigation";
+import { PublicRoutes } from "./navigation";
 import "./App.css";
 import { AlbumProvider } from "./features/Album";
 

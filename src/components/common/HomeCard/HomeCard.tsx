@@ -1,6 +1,7 @@
-import React, { CSSProperties, useState, MouseEvent } from "react";
-import { Buttom } from "../Button";
+import { useState } from "react";
+
 import "./HomeCardStyle.css";
+import { IHomeCardProps } from "./types";
 
 export const HomeCard = ({
   imageUrl,
@@ -11,16 +12,7 @@ export const HomeCard = ({
   mainDivStle,
   onClickAdd,
   onClickNavigete,
-}: {
-  imageUrl: string;
-  textBtn: string;
-  heightImg: string;
-  width: string;
-  divColor: CSSProperties["color"];
-  mainDivStle?: CSSProperties;
-  onClickAdd: (e: MouseEvent<HTMLButtonElement>) => void;
-  onClickNavigete: () => void;
-}) => {
+}: IHomeCardProps) => {
   const [displayRemove, setDisplayRemove] = useState("none");
 
   return (

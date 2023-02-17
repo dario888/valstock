@@ -1,6 +1,7 @@
 import React, { CSSProperties, useState, MouseEvent } from "react";
 import { Buttom } from "../Button";
 import "./CardImgStyle.css";
+import { ICardImgProps } from "./types";
 
 export const CardImg = ({
   image,
@@ -10,15 +11,7 @@ export const CardImg = ({
   width,
   mainDivStle,
   onClickRemove,
-}: {
-  image: string;
-  textBtn: string;
-  heightImg: string;
-  width: string;
-  divColor: CSSProperties["color"];
-  mainDivStle?: CSSProperties;
-  onClickRemove: (newImg: string) => void;
-}) => {
+}: ICardImgProps) => {
   // const { album,  } = useAlbumStore();
   const [displayRemove, setDisplayRemove] = useState("none");
 
@@ -29,7 +22,13 @@ export const CardImg = ({
       onMouseOut={() => setDisplayRemove("none")}
       style={{ ...mainDivStle }}
     >
-      <img src={image} height={heightImg} width={width} alt="img" />
+      <img
+        className="image"
+        src={image}
+        height={heightImg}
+        width={width}
+        alt="img"
+      />
       <div
         className="wrapperBtn"
         style={{ display: `${displayRemove}`, backgroundColor: divColor }}

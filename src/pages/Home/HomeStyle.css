@@ -19,6 +19,18 @@
     padding-bottom: 100px; 
 }
 
+@media (max-width: 600px){
+    .homeGrid{
+        grid-template-columns:  1fr;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1200px){
+    .homeGrid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 
 
 

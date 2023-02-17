@@ -1,6 +1,6 @@
-import React, { Fragment, useEffect, useState, MouseEvent } from "react";
+import { Fragment, useState, MouseEvent } from "react";
 import { Buttom, HomeCard, Popup, ToastMsg } from "../../components";
-import { IImage, useAlbumProvider, useGetImages } from "../../features/Album";
+import { useAlbumProvider, useGetImages } from "../../features/Album";
 import "./HomeStyle.css";
 import { useNavigate } from "react-router-dom";
 
@@ -15,10 +15,9 @@ const HomePage = () => {
   } = useGetImages();
   const [popup, setPopup] = useState(false);
   const [toast, setToast] = useState(false);
+  const { setImageDetailAction } = useAlbumProvider();
   const navigate = useNavigate();
-  const { setImageDetail } = useAlbumProvider();
-  // console.log("DATA", data?.pages);
-  // console.log(albumsList);
+
   return status === "loading" ? (
     <h2 style={{ margin: "200px", textAlign: "center" }}>Loading...</h2>
   ) : status === "error" ? (
@@ -46,12 +45,11 @@ const HomePage = () => {
                 width="300px"
                 onClickAdd={(e: MouseEvent<HTMLButtonElement>) => {
                   e.stopPropagation();
-                  // TODO setImageDetailAction
-                  setImageDetail(image);
+                  setImageDetailAction(image);
                   setPopup(true);
                 }}
                 onClickNavigete={() => {
-                  setImageDetail(image);
+                  setImageDetailAction(image);
                   navigate("/detail");
                 }}
               />

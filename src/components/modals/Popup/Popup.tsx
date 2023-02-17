@@ -1,28 +1,22 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
+import { isEmpty } from "lodash";
+import { ChangeEvent, useState } from "react";
 import { IAlbum, useAlbumProvider } from "../../../features/Album";
 import { createAtDate } from "../../../utils";
 import { AlbumItem } from "../../AlbumItem";
 import { Buttom } from "../../common";
 import "./PopupStyle.css";
+import { IPopupProps } from "./types";
 
 export const Popup = ({
   isActive = false,
   onClosePopupCB,
   onToastCB,
-}: {
-  onClosePopupCB: () => void;
-  onToastCB: () => void;
-  isActive: boolean;
-}) => {
-  const { setAddAlbumAction, albumsList, setAlbumList, imageDetail } =
+}: IPopupProps) => {
+  const { addAlbumToListAction, albumsList, addImgToAlbumsAction } =
     useAlbumProvider();
   const [isCreateAlbum, setIsCreateAlbum] = useState(true);
   const [albumName, setAlbumName] = useState("");
   const [selectedAlbums, setSelectedAlbums] = useState<IAlbum[]>([]);
-
-  // console.log("AL", albumsList);
-  console.log("SA", selectedAlbums);
-  // console.log("ID", imageDetail);
 
   const onChangeAlbum = (e: ChangeEvent<HTMLInputElement>) => {
     setAlbumName(e.target.value);
@@ -31,6 +25,7 @@ export const Popup = ({
   const closePopupHendler = () => {
     onClosePopupCB();
     setSelectedAlbums([]);
+    setIsCreateAlbum(true);
   };
 
   const selectedAlbumHendler = (album: IAlbum, isAlbumSelected: boolean) => {
@@ -40,31 +35,25 @@ export const Popup = ({
       setSelectedAlbums(selectedAlbums.filter((a) => a.id !== album.id));
     }
   };
+
   const onClikSaveImage = (albumNameParam: string) => {
     onClosePopupCB();
 
     if (isCreateAlbum) {
-      setAddAlbumAction({
+      addAlbumToListAction({
         id: Math.round(Math.random() * 1000),
         name: albumNameParam,
         value: [],
         createAt: createAtDate(),
       });
       setAlbumName("");
-    } else {
-      //TODO getAlbumFromListAction
-      const updatedAlbums = selectedAlbums.map((album) => ({
-        ...album,
-        value: album.value.concat(imageDetail.download_url),
-      }));
+    }
 
-      const albumsData = albumsList.map((a) => {
-        const updatedAlbum = updatedAlbums.find((ua) => ua.id === a.id);
-        return updatedAlbum ?? a;
-      });
-      setAlbumList(albumsData);
+    if (!isEmpty(selectedAlbums)) {
+      addImgToAlbumsAction(selectedAlbums);
       setSelectedAlbums([]);
     }
+
     setTimeout(() => {
       onToastCB();
     }, 700);
@@ -87,13 +76,17 @@ export const Popup = ({
           <Buttom
             btnText="CREATE NEW ALBUM"
             btnVariant="noBorderBtn"
-            onClickCB={() => setIsCreateAlbum(!isCreateAlbum)}
+            onClickCB={() => {
+              if (!isCreateAlbum) setIsCreateAlbum(!isCreateAlbum);
+            }}
             colorText={isCreateAlbum ? "black" : "#9D9D9D"}
           />
           <Buttom
             btnText="ADD TO EXISTING"
             btnVariant="noBorderBtn"
-            onClickCB={() => setIsCreateAlbum(!isCreateAlbum)}
+            onClickCB={() => {
+              if (isCreateAlbum) setIsCreateAlbum(!isCreateAlbum);
+            }}
             colorText={isCreateAlbum ? "#9D9D9D" : "black"}
           />
         </div>
@@ -130,6 +123,7 @@ export const Popup = ({
             />
             <Buttom
               btnType="button"
+              btnDisabled={isEmpty(albumName) && isEmpty(selectedAlbums)}
               btnText="SAVE"
               btnVariant="blackSmBtn"
               onClickCB={() => onClikSaveImage(albumName)}

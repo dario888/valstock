@@ -56,7 +56,6 @@
 @media (max-width: 600px) {
     .title {
         font-size: 28px;
-        /* line-height: 35px; */
     }
     .inputHeaderWrapper{
         padding-top: 80px;
@@ -70,8 +69,8 @@
         height: 100px;
     }
     .cameraImg{
-        height: 180px;
-        top:-82px;
+        height: 260px;
+        top:-170px;
         right: 16%;
     }
     .errMsg{
@@ -79,33 +78,12 @@
     }
 }
 
-@media (max-width: 900px) {
-    /* .title {
-        font-size: 32px;
-        line-height: 35px;
-    }
-
-    .inputHeaderWrapper{
-        padding-top: 80px;
-    }
-    .headerWrapper{
-        margin-bottom: 20px;
-    }
-    .subtitle {
-        font-size: 15px;   
-    } */
-
-    /* .footer{        
-        height: 100px;
-    }
+@media (max-width: 500px) {
     .cameraImg{
-        height: 180px;
-        top:-82px;
-        right: 16%;
+        height: 200px;
+        top:-100px;
+        right: 25%;
     }
-    .errMsg{
-        font-size: 14px;
-    } */
 }
 
 @media (max-height: 600px) {
@@ -132,3 +110,40 @@
         right: 35%;
     }
 }
+
+
+@media (min-width: 601px) and (max-width: 900px) {
+    /* .title {
+        font-size: 32px;
+        line-height: 35px;
+    }
+
+    .inputHeaderWrapper{
+        padding-top: 80px;
+    }
+    .headerWrapper{
+        margin-bottom: 20px;
+    }
+    .subtitle {
+        font-size: 15px;   
+    } */
+
+    /* .footer{        
+        height: 100px;
+    }
+    
+    .errMsg{
+        font-size: 14px;
+    } */
+
+    .cameraImg{
+        right: 23%;
+    }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+    .cameraImg{
+        right: 30%;
+    }
+}
+

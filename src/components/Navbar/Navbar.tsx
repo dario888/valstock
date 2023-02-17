@@ -1,10 +1,8 @@
 import { isEmpty } from "lodash";
-import { Fragment, SyntheticEvent } from "react";
+import { Fragment } from "react";
 import { useNavigate } from "react-router-dom";
 import LogoImg from "../../assets/logo.png";
-import { IAlbum } from "../../features/Album";
 import { useAlbumProvider } from "../../features/Album/providers";
-
 import {
   getFromLocalStorage,
   removeFromStorage,
@@ -15,13 +13,12 @@ import "./NavbarStyle.css";
 
 export const Navbar = () => {
   const navigate = useNavigate();
-  const { albumsList, setAlbum } = useAlbumProvider();
+  const { albumsList, getAlbumFromListAction } = useAlbumProvider();
   const isAuthenticated = getFromLocalStorage(STORAGE_KES.AUTH);
-  // console.log(11, albums);
+
   const onClickAlbum = (id: number) => {
     if (!isEmpty(albumsList)) {
-      //TODO getAlbumFromList
-      setAlbum(albumsList.find((a) => a.id === id) as IAlbum);
+      getAlbumFromListAction(id);
       navigate("/album");
     }
   };

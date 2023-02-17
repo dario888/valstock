@@ -4,15 +4,8 @@ import React, {
   HTMLInputTypeAttribute,
 } from "react";
 import "./InputFieldStyle.css";
+import { IInputFiled } from "./types";
 
-export interface IInputFiled {
-  inputType: HTMLInputTypeAttribute;
-  inputName: string;
-  labelName: string;
-  inputValue: string;
-  errorMsg?: string;
-  onChangeCB: (e: ChangeEvent<HTMLInputElement>) => void;
-}
 export const InputField = ({
   inputType,
   inputName,

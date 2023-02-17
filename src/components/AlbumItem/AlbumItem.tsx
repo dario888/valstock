@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { IAlbum } from "../../features/Album";
 import "./AlbumItemStyle.css";
+import { IAlbumItemProps } from "./types";
 
 export const AlbumItem = ({
   modalActive,
   onSelectedAlbumItemCB,
   albumObj,
-}: {
-  modalActive: boolean;
-  albumObj: IAlbum;
-  onSelectedAlbumItemCB: (album: IAlbum, isAlbumSelected: boolean) => void;
-}) => {
+}: IAlbumItemProps) => {
   const [active, setActive] = useState(false);
 
   useEffect(() => {

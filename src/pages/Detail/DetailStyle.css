@@ -34,3 +34,51 @@
 .text2{
     font-size: 32px;
 }
+
+
+@media (max-width: 700px){
+    .mainDetail{
+        padding-top: 40px;
+    }
+   
+    .btnDiv{
+        margin-bottom: 15px;
+        justify-content: space-evenly;
+    }
+
+    .wrapperText{
+        margin-bottom: 15px;
+    }
+
+    .text2 {
+        font-size: 28px;
+    }
+
+    .detailImg{
+        height: 480px;
+        width: 320px;
+    }
+}
+
+@media (max-height: 600px){
+    .mainDetail{
+        padding-top: 50px;
+    }
+    .btnDiv{
+        margin-bottom: 10px;
+        justify-content: space-evenly;
+    }
+    .wrapperText{
+        margin-bottom: 10px;
+    }
+
+    .text2 {
+        font-size: 28px;
+    }
+    .detailImg{
+        height: 340px;
+        width: 300px;
+    }
+}
+
+

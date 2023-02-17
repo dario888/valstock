@@ -1,13 +1,7 @@
-import React, { useState } from "react";
 import "./ToastMsgStyle.css";
+import { IToastMsgProps } from "./types";
 
-export const ToastMsg = ({
-  isActive = false,
-  onClickCB,
-}: {
-  onClickCB: () => void;
-  isActive: boolean;
-}) => {
+export const ToastMsg = ({ isActive = false, onClickCB }: IToastMsgProps) => {
   return (
     <>
       <div

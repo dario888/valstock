@@ -1,23 +1,15 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Buttom, DropdownButton, Popup, ToastMsg } from "../../components";
+import { Buttom, DownloadBtn, Popup, ToastMsg } from "../../components";
 import { useAlbumProvider } from "../../features/Album";
 import "./DetailStyle.css";
 
-const dammyDownlload = [
-  {
-    id: 1,
-    name: "test",
-    value: ["dsadsa"],
-  },
-];
 const DetailPage = () => {
   const { imageDetail } = useAlbumProvider();
   const [isPopup, setIsPopup] = useState(false);
   const [isToast, setIsToast] = useState(false);
   const navigate = useNavigate();
 
-  // console.log(99, imageDetail);
   return (
     <div className="mainDetail">
       <Popup
@@ -32,15 +24,11 @@ const DetailPage = () => {
           btnVariant="whiteXlBtn"
           onClickCB={() => setIsPopup(true)}
         />
-        <DropdownButton
-          content={dammyDownlload}
-          btnName="DOWNLOAD"
-          btnVariant="downloadBtn"
-          onClickItemCB={() => null}
-        />
+        <DownloadBtn imageUrl={imageDetail.download_url} btnName="DOWNLOAD" />
       </div>
       <div className="imgDiv">
         <img
+          className="detailImg"
           height={"530px"}
           width={"410px"}
           src={imageDetail.download_url}

@@ -30,3 +30,9 @@
 .text.active {
     transform: translateY(0%);
 }
+
+@media (max-width: 600px){
+    .text {
+        font-size: 25px;
+    }
+}
