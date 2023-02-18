@@ -1,0 +1,109 @@
+.modalPopup {
+    position: fixed;
+    top: 0px;
+   height: 100%;
+   width: 100%;
+   background-color: transparent;
+}
+
+.popup {
+    position: fixed;
+    top: -13%;
+    right: 36%;
+    border: 2px solid;
+    background-color: white;
+    height: 410px;
+    width: 540px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 700;
+    transform: translateX(calc(100% *2.3));
+    transition: all .6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+
+.popup.active {
+    transform: translateX(0%);
+}
+
+
+.topButns{
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.albums{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+.enterTitle{
+    font-size: 32px;
+}
+
+.albumsList{
+    color: #9D9D9D;
+    animation: fadeIn 2s;
+}
+.albumsList:hover{
+    cursor: pointer;
+}
+
+.albumsList:focus{
+    color: black;
+    font-weight: bol;
+}
+
+.bottomButns{
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.inputAlbum{
+    border: none;
+    padding: 10px 0px;
+    font-size: 20px;
+    text-align: center;
+}
+.inputAlbum:focus{
+    outline: none;
+}
+
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+
+@media (max-width: 600px){
+    .popup {
+        height: 0px;
+        width: 320px;
+        padding: 100px 0;
+        right: 6%;
+    }
+}
+
+@media (max-height: 600px){
+    .popup {
+        height: 350px;
+        top:-28%;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px){
+    .popup {   
+        right: 10%;
+    }
+}
+@media (min-width: 901px) and (max-width: 1200px){
+    .popup {   
+        right: 14%;
+    }
+}
