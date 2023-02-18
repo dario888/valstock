@@ -2,8 +2,8 @@ import { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { Navbar } from "./components";
-import { PrivateRoutes } from "./navigation";
-import { PublicRoutes } from "./navigation";
+import { PrivateRoutes } from "./Navigation";
+import { PublicRoutes } from "./Navigation";
 import "./App.css";
 import { AlbumProvider } from "./features/Album";
 
