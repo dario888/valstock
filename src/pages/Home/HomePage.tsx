@@ -37,7 +37,7 @@ const HomePage = () => {
           <Fragment key={i}>
             {item.images.map((image, k) => (
               <HomeCard
-                key={k}
+                key={image.id}
                 imageUrl={image.download_url}
                 textBtn="ADD TO ALBUM"
                 divColor="black"

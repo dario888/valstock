@@ -1,84 +1,81 @@
-.mainDetail{
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow-x: hidden;
+.mainDetail {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
 }
 
 .btnDiv {
-    width: 400px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-bottom: 25px;
+  width: 400px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 25px;
 }
 
-.bottomSection{
-    font-weight:bold;
-    text-align: center;
-    margin-bottom: 30px;
+.bottomSection {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
-.wrapperText{
-    margin-bottom: 30px;
+.wrapperText {
+  margin-bottom: 30px;
 }
 
-.text1{
-    font-size: 14px;
+.text1 {
+  font-size: 14px;
 }
 
-.text2{
-    font-size: 32px;
+.text2 {
+  font-size: 32px;
 }
 
+@media (max-width: 700px) {
+  .mainDetail {
+    padding-top: 40px;
+  }
 
-@media (max-width: 700px){
-    .mainDetail{
-        padding-top: 40px;
-    }
-   
-    .btnDiv{
-        margin-bottom: 15px;
-        justify-content: space-evenly;
-    }
+  .btnDiv {
+    margin-bottom: 15px;
+    justify-content: space-evenly;
+  }
 
-    .wrapperText{
-        margin-bottom: 15px;
-    }
+  .wrapperText {
+    margin-bottom: 15px;
+  }
 
-    .text2 {
-        font-size: 28px;
-    }
+  .text2 {
+    font-size: 28px;
+  }
 
-    .detailImg{
-        height: 480px;
-        width: 320px;
-    }
+  .detailImg {
+    height: 480px;
+    width: 320px;
+  }
 }
 
-@media (max-height: 600px){
-    .mainDetail{
-        padding-top: 50px;
-    }
-    .btnDiv{
-        margin-bottom: 10px;
-        justify-content: space-evenly;
-    }
-    .wrapperText{
-        margin-bottom: 10px;
-    }
+@media (max-height: 750px) {
+  .mainDetail {
+    padding-top: 50px;
+  }
+  .btnDiv {
+    margin-bottom: 10px;
+    justify-content: space-evenly;
+  }
+  .wrapperText {
+    margin-bottom: 10px;
+  }
 
-    .text2 {
-        font-size: 28px;
-    }
-    .detailImg{
-        height: 340px;
-        width: 300px;
-    }
+  .text2 {
+    font-size: 28px;
+  }
+  .detailImg {
+    height: 340px;
+    width: 300px;
+  }
 }
-
-

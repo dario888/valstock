@@ -1,4 +1,4 @@
-import { useInfiniteQuery, useQuery } from "react-query";
+import { useInfiniteQuery } from "react-query";
 import { getAllImages } from "./api";
 import { IInfinitePage } from "./types";
 

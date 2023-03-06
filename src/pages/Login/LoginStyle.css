@@ -1,119 +1,118 @@
-.mainDiv{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+.mainDiv {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.inputHeaderWrapper{
-    padding-top: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+.inputHeaderWrapper {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-.headerWrapper{
-    margin-bottom: 40px;
+.headerWrapper {
+  margin-bottom: 40px;
 }
 
 .title {
-    font-size: 44px;
-    font-weight: bold;
-    text-align: center;
+  font-size: 44px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .subtitle {
-    font-size: 22px;   
-    text-align: center; 
+  font-size: 22px;
+  text-align: center;
 }
 
-.inputWrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 327px;    
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 327px;
 }
-.errMsg{
-    color: red;
-}
-
-.footer{
-    position: relative;
-    height: 180px;
-    width: 100%;
-    background-color: black;
+.errMsg {
+  color: red;
 }
 
-.cameraImg{
-    position: absolute;
-    top:-170px;
-    right: 40%;
+.footer {
+  position: relative;
+  height: 180px;
+  width: 100%;
+  background-color: black;
+}
+
+.cameraImg {
+  position: absolute;
+  top: -170px;
+  right: 40%;
 }
 
 @media (max-width: 600px) {
-    .title {
-        font-size: 28px;
-    }
-    .inputHeaderWrapper{
-        padding-top: 80px;
-    }
-    
-    .subtitle {
-        font-size: 15px;   
-    }
+  .title {
+    font-size: 28px;
+  }
+  .inputHeaderWrapper {
+    padding-top: 80px;
+  }
 
-    .footer{        
-        height: 100px;
-    }
-    .cameraImg{
-        height: 260px;
-        top:-170px;
-        right: 16%;
-    }
-    .errMsg{
-        font-size: 14px;
-    }
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .footer {
+    height: 100px;
+  }
+  .cameraImg {
+    height: 260px;
+    top: -170px;
+    right: 16%;
+  }
+  .errMsg {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 500px) {
-    .cameraImg{
-        height: 200px;
-        top:-100px;
-        right: 25%;
-    }
+  .cameraImg {
+    height: 200px;
+    top: -100px;
+    right: 25%;
+  }
 }
 
-@media (max-height: 600px) {
-    .title {
-        font-size: 28px;
-        line-height: 35px;
-    }
+@media (max-height: 750px) {
+  .title {
+    font-size: 28px;
+    line-height: 35px;
+  }
 
-    .inputHeaderWrapper{
-        padding-top: 80px;
-    }
-    .headerWrapper{
-        margin-bottom: 20px;
-    }
-    .subtitle {
-        font-size: 15px;   
-    }
-    .footer{  
-        height: 60px;      
-    }
-    .cameraImg{
-        height: 150px;
-        top:-92px;
-        right: 35%;
-    }
+  .inputHeaderWrapper {
+    padding-top: 80px;
+  }
+  .headerWrapper {
+    margin-bottom: 20px;
+  }
+  .subtitle {
+    font-size: 15px;
+  }
+  .footer {
+    height: 60px;
+  }
+  .cameraImg {
+    height: 150px;
+    top: -92px;
+    right: 35%;
+  }
 }
-
 
 @media (min-width: 601px) and (max-width: 900px) {
-    /* .title {
+  /* .title {
         font-size: 32px;
         line-height: 35px;
     }
@@ -128,7 +127,7 @@
         font-size: 15px;   
     } */
 
-    /* .footer{        
+  /* .footer{        
         height: 100px;
     }
     
@@ -136,14 +135,13 @@
         font-size: 14px;
     } */
 
-    .cameraImg{
-        right: 23%;
-    }
+  .cameraImg {
+    right: 23%;
+  }
 }
 
 @media (min-width: 901px) and (max-width: 1200px) {
-    .cameraImg{
-        right: 30%;
-    }
+  .cameraImg {
+    right: 30%;
+  }
 }
-
